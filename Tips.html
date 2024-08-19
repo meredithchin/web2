@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelLah</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet"/>
+    
+        <!-- Add Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ksm0JBlF8sD9+kyxx5qnD39Qy6sA5QOUuB6M7ly7j6Lz60wXLP80l6i+H2F5Vh0" crossorigin="anonymous">
+    </head>
+    
+    <link rel="stylesheet" href="Tips.css">
+</head>
+
+<body>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="home.html" id="logo"><span>Travel</span>Lah</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="toSee.html">Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="toDo.html">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Tips.html">Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plan.html">Plans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+  
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+          </form>
+  
+          <img src="moon.png" id="icon">
+          
+        </div>
+      </div>
+    </nav>
+  <!-- Navbar End -->
+   
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center">
+        <div class="container">
+            <h1 class="display-4">Essential Travel Tips</h1>
+            <p class="lead">Your go-to guide for a hassle-free travel experience.</p>
+            <a href="#tips" class="btn btn-primary">Get Started</a>
+        </div>
+    </header>
+
+    
+
+    <!-- Tips Section -->
+    <section id="tips" class="container my-5">
+        <h2 class="text-center">TIPS NEEDED BEFORE TRAVEL</h2>
+        <div class="row">
+            <!-- Packing Tips Card -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="traveltips1.jpeg" class="card-img-top" alt="Packing Tips">
+                <div class="card-body">
+                <h5 class="card-title">Packing Tips</h5>
+                <p class="card-text">Learn how to pack smart and light for any destination.</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#packingTipsModal">Read More</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Safety Tips Card -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="traveltips2.jpeg" class="card-img-top" alt="Safety Tips">
+            <div class="card-body">
+                <h5 class="card-title">Safety Tips</h5>
+                <p class="card-text">Stay safe while exploring new places with these tips.</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#safetyTipsModal">Read More</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Budgeting Tips Card -->
+    <div class="col-md-4">
+        <div class="card">
+            <img src="traveltips3.jpeg" class="card-img-top" alt="Budgeting Tips">
+            <div class="card-body">
+                <h5 class="card-title">Budgeting Tips</h5>
+                <p class="card-text">Make the most of your travel budget with these suggestions.</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#budgetingTipsModal">Read More</a>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+
+    <!-- Packing Tips Modal -->
+    <div class="modal fade" id="packingTipsModal" tabindex="-1" role="dialog" aria-labelledby="packingTipsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="packingTipsModalLabel">Packing Tips</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Packing efficiently is key to a stress-free trip. Here are some tips:</p>
+                    <ul>
+                        <li>Make a packing list.</li>
+                        <li>Roll your clothes to save space.</li>
+                        <li>Use packing cubes to organize items.</li>
+                        <li>Pack versatile clothing that can be layered.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Safety Tips Modal -->
+    <div class="modal fade" id="safetyTipsModal" tabindex="-1" role="dialog" aria-labelledby="safetyTipsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="safetyTipsModalLabel">Safety Tips</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Ensuring your safety is paramount when traveling. Follow these safety tips:</p>
+                    <ul>
+                        <li>Keep your valuables secure and out of sight.</li>
+                        <li>Stay aware of your surroundings.</li>
+                        <li>Research your destination beforehand.</li>
+                        <li>Always have emergency contacts saved.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Budgeting Tips Modal -->
+    <div class="modal fade" id="budgetingTipsModal" tabindex="-1" role="dialog" aria-labelledby="budgetingTipsModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="budgetingTipsModalLabel">Budgeting Tips</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Traveling on a budget doesn't mean you can't have a great time. Consider these tips:</p>
+                    <ul>
+                        <li>Plan your trip during the off-season.</li>
+                        <li>Look for discounts and deals online.</li>
+                        <li>Book accommodations in advance.</li>
+                        <li>Travel using public transportation.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Video Section -->
+    <section id="video" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Travel Tips Videos</h2>
+            <iframe width="900" height="500" src="https://www.youtube.com/embed/VoSwZNS1ns0?si=e0bYVLleATqReoRj" 
+                title="YouTube video player" 
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+<!-- Footer Start -->
+<footer id="footer">
+    <h1><span>Travel</span>Lah</h1>
+    <p></p>
+    <div class="social-links">
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-pinterest-p"></i>
+    </div>
+  
+    <div class="credit">
+      <p>Contact Us :<a href="mailto:info@travelLah.com">info@travelLah.com</a></p>
+    </div>
+  
+    <div class="copyright">
+      <p>&copy;Copyright 2024 TravelLah. All Rights Reserved</p>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Tips.js"></script>
+</body>
+
+</html>

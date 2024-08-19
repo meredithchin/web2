@@ -1,0 +1,399 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+    --primary-color: #f9f9f9;
+    --secondary-color: black;
+}
+
+.dark-theme {
+    --primary-color: #212121;
+    --secondary-color: #fff;
+}
+
+/* Navbar Start */
+#navbar {
+    background: var(--primary-color);
+}
+
+#logo {
+    font-size: 36px;
+    font-weight: 750;
+    color: var(--secondary-color);
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+
+#logo span {
+    color: #ffa500;
+}
+
+.navbar-toggler span {
+    color: #ffa500;
+}
+
+.navbar-nav {
+    margin-left: 30px;
+}
+
+.nav-item .nav-link {
+    font-size: 16px;
+    font-weight: 550;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+}
+
+.nav-item .nav-link:hover {
+    background: #ffa500;
+    color: var(--primary-color);
+}
+
+#navbar form button {
+    background: orange;
+    color: var(--primary-color);
+    border: none;
+}
+
+#icon {
+    width: 30px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+/* Navbar End */
+
+/* Home Section Start */
+.home {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(Background_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home .content {
+    text-align: center;
+    padding-top: 200px;
+}
+
+.home .content h5 {
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    text-shadow: 0px 1px 1px black;
+}
+
+.home .content h1 {
+    color: white;
+    font-size: 68px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 25px;
+}
+
+.changecontent::after {
+    content: ' ';
+    color: #ffa500;
+    text-shadow: 0px 1px 1px black;
+    animation: changetext 10s infinite linear;
+}
+@keyframes changetext {
+    0%{content: "Perak";}
+    10%{content: "Penang";}
+    20%{content: "Kedah";}
+    25%{content: "Kelantan";}
+    30%{content: "Pahang";}
+    40%{content: "Johor";}
+    45%{content: "Perlis";}
+    50%{content: "Selangor";}
+    60%{content: "Seremban";}
+    70%{content: "Melaka";}
+    80%{content: "Sabah";}
+    90%{content: "Sarawak";}
+    100%{content: "Kuala Lumpur";}
+}
+
+.home .content p {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 30px;
+    margin-top: 5px;
+}
+
+.home .content a {
+    padding: 10px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+    font-weight: 550;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.home .content a:hover {
+    background: #ffa500;
+    color: var(--primary-color);
+}
+@media (max-width: 850px) {
+    .home {
+        background-position: 50%;
+    }
+}
+@media (max-width: 850px) {
+    .home .content h5{
+        font-size: 25px;
+    }
+
+    .home .content h1 {
+        font-size: 38px;
+    }
+
+    .home .content p {
+        font-size: 18px;
+    }
+}
+/* Home Section End */
+
+/* Section Destinations Start */
+.destinations {
+    padding-top: 25px;
+    background: var(--primary-color);
+}
+
+.main-txt {
+    font-size: 38px;
+    font-weight: 750;
+    color: var(--secondary-color);
+    text-align: center;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+
+.main-txt span {
+    color: #ffa500;
+}
+
+.destinations .sub-txt {
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    padding-top: 175px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(Background_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.destinations .sub-txt h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 625;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+
+.destinations .sub-txt p {
+    color: white;
+    font-size: 20px;
+    font-weight: 590;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 55px;
+    margin-top: 5px;
+}
+
+#more-btn {
+    width: 150px;
+    height: 38px;
+    border: none;
+    background: var(--primary-color);
+    border-radius: 15px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+#more-btn:hover {
+    width: 170px;
+    height: 40px;
+    background: #ffa500;
+}
+
+#more-btn a {
+    padding: 10px;
+    letter-spacing: 2px;
+    font-weight: 550;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+#more-btn a:hover {
+    font-weight: 590;
+}
+/* Section Destinations End */
+
+/* Section Activities Start */
+.activities {
+    padding-top: 25px;
+    background: var(--primary-color);
+}
+
+.activities .sub-txt {
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    padding-top: 175px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(Background_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.activities .sub-txt h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 625;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+
+.activities .sub-txt p {
+    color: white;
+    font-size: 20px;
+    font-weight: 590;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 55px;
+    margin-top: 5px;
+}
+/* Section Activities End */
+
+/* Section Tips Start */
+.tips {
+    padding-top: 25px;
+    background: var(--primary-color);
+}
+
+.tips .sub-txt {
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    padding-top: 175px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(Background_4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tips .sub-txt h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 625;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+
+.tips .sub-txt p {
+    color: white;
+    font-size: 20px;
+    font-weight: 590;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 55px;
+    margin-top: 5px;
+}
+/* Section Tips End */
+
+/* Section Plans Start */
+.plans {
+    padding-top: 25px;
+    background: var(--primary-color);
+}
+
+.plans .sub-txt {
+    width: 100%;
+    height: 60vh;
+    text-align: center;
+    padding-top: 175px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(Background_5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.plans .sub-txt h2 {
+    color: white;
+    font-size: 50px;
+    font-weight: 625;
+    text-shadow: 0px 1px 1px black;
+    margin-top: 5px;
+}
+
+.plans .sub-txt p {
+    color: white;
+    font-size: 20px;
+    font-weight: 590;
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 55px;
+    margin-top: 5px;
+}
+/* Section Plans End */
+
+/* Footer Start */
+#footer {
+    width: 100%;
+    text-align: center;
+    background: var(--primary-color);
+}
+
+#footer h1 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding-top: 30px;
+    text-shadow: 0px 0px 1px black;
+}
+
+#footer h1 span {
+    color: #ffa500;
+}
+
+#footer p {
+    color: var(--secondary-color);
+}
+
+.social-links i {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.social-links i:hover {
+    background: #ffa500;
+}
+
+.credit p {
+    color: var(--secondary-color);
+}
+
+.credit a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+
+.copyright p {
+    color: var(--secondary-color);
+}
+/* Footer End */

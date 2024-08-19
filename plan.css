@@ -1,0 +1,255 @@
+/* General Styles */
+body {
+    font-family: 'Bodoni', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #f9f9f9;
+    --secondary-color: black;
+}
+
+.dark-theme {
+    --primary-color: #212121;
+    --secondary-color: #fff;
+}
+
+
+/* Hero Section */
+.hero-section {
+    background-image: url('background2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    animation: fadeInDown 2s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background2.jpg') no-repeat center center/cover;
+    padding: 100px 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+/* Navbar Start */
+#navbar {
+    background: var(--primary-color);
+}
+
+#logo {
+    font-size: 36px;
+    font-weight: 750;
+    color: var(--secondary-color);
+    text-shadow: 0px 1px 1px black;
+    margin-bottom: 5px;
+}
+
+#logo span {
+    color: #ffa500;
+}
+
+.navbar-toggler span {
+    color: #ffa500;
+}
+
+.navbar-nav {
+    margin-left: 30px;
+}
+
+.nav-item .nav-link {
+    font-size: 16px;
+    font-weight: 550;
+    color: var(--secondary-color);
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: 0.5s ease;
+}
+
+.nav-item .nav-link:hover {
+    background: #ffa500;
+    color: var(--primary-color);
+}
+
+#navbar form button {
+    background: orange;
+    color: var(--primary-color);
+    border: none;
+}
+
+#icon {
+    width: 30px;
+    margin-left: 35px;
+    cursor: pointer;
+}
+/* Navbar End */
+
+/* Trip Planner Form */
+.trip-form {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.trip-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.trip-form .form-control {
+    border-radius: 5px;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.trip-form .btn {
+    background-color: #ffa500;
+    border-color: #ffa500;
+    transition: background-color 0.3s;
+}
+
+.trip-form .btn:hover {
+    background-color: #ffa500;
+}
+
+.trip-form {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out 0.5s;
+}
+
+.trip-form .form-group label {
+    font-weight: bold;
+}
+
+.trip-form .form-control {
+    border-radius: 0;
+    border: 1px solid #ced4da;
+}
+
+.trip-form .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #ffa500;
+}
+
+.trip-form .btn-primary {
+    background-color: #e4b867;
+    border-color: #e4b867;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.trip-form .btn-primary:hover {
+    background-color: #e4b867;
+    border-color: #e4b867;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.25rem;
+    }
+}
+
+/* Footer Start */
+#footer {
+    width: 100%;
+    text-align: center;
+    background: var(--primary-color);
+}
+
+#footer h1 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding-top: 30px;
+    text-shadow: 0px 0px 1px black;
+}
+
+#footer h1 span {
+    color: #ffa500;
+}
+
+#footer p {
+    color: var(--secondary-color);
+}
+
+.social-links i {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.social-links i:hover {
+    background: #ffa500;
+}
+
+.credit p {
+    color: var(--secondary-color);
+}
+
+.credit a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.credit a:hover {
+    text-decoration: underline;
+}
+
+.copyright p {
+    color: var(--secondary-color);
+}
+/* Footer End */

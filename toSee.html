@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Explore Malaysia - What to See</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-ksm0JBlF8sD9+kyxx5qnD39Qy6sA5QOUuB6M7ly7j6Lz60wXLP80l6i+H2F5Vh0" crossorigin="anonymous">
+
+     <!-- Bookstrap Link -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <!-- Bookstrap Link -->
+      
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="home.html" id="logo"><span>Travel</span>Lah</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="toSee.html">Destinations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="toDo.html">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Tips.html">Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plans.html">Plans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+  
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search">
+            <button class="btn btn-primary" type="button">Search</button>
+          </form>
+  
+          <img src="moon.png" id="icon">
+          
+        </div>
+      </div>
+    </nav>
+  <!-- Navbar End -->
+
+    <header class="jumbotron jumbotron-fluid text-white text-center header-image">
+        <div class="container">
+            <h1 class="display-4">Explore Malaysia - <span id="changing-text">What to See</span></h1>
+            <p class="lead">Discover the best places to visit across Malaysia, from cultural landmarks to natural wonders.</p>
+        </div>
+    </header>
+
+<div class="container my-5">
+  <div class="form-group">
+    <label for="state-dropdown" class="text-white">Select a state you're interested to visit!</label>
+    <select class="form-control" id="state-dropdown">
+      <option value=""> Select a state you're interested to visit! </option>
+      <option value="Johor">Johor</option>
+      <option value="Kedah">Kedah</option>
+      <option value="Kelantan">Kelantan</option>
+      <option value="Malacca">Malacca</option>
+      <option value="Negeri Sembilan">Negeri Sembilan</option>
+      <option value="Pahang">Pahang</option>
+      <option value="Penang">Penang</option>
+      <option value="Perak">Perak</option>
+      <option value="Perlis">Perlis</option>
+      <option value="Selangor">Selangor</option>
+      <option value="Terengganu">Terengganu</option>
+      <option value="Sabah">Sabah</option>
+      <option value="Sarawak">Sarawak</option>
+      <option value="WP Kuala Lumpur">WP Kuala Lumpur</option>
+      <option value="WP Labuan">WP Labuan</option>
+      <option value="WP Putrajaya">WP Putrajaya</option>
+    </select>
+  </div>
+
+  <!-- Image Container -->
+  <div class="my-4" id="state-image-container"></div>
+
+  <!-- Description Container -->
+  <div class="my-4" id="description-container"></div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>© 2024 Explore Malaysia. All Rights Reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const apiKey = 'gJv6BSlZQ7p5CAq8RSUkIiizaoMDV8nnaimc8k7TKqbP9zNw6yEVKHfZ';
+    const stateDropdown = document.getElementById('state-dropdown');
+    const imageContainer = document.getElementById('state-image-container');
+    const descriptionContainer = document.getElementById('description-container');
+    const changingText = document.getElementById('changing-text');
+
+    function fetchImages(state) {
+        fetch(`https://api.pexels.com/v1/search?query=${state}&per_page=1`, {
+            headers: {
+                Authorization: apiKey
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const photo = data.photos[0];
+            if (photo) {
+                imageContainer.innerHTML = `<img src="${photo.src.large}" alt="${state} Image" class="img-fluid">`;
+            } else {
+                imageContainer.innerHTML = `<p>No image found for ${state}.</p>`;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching image:', error);
+            imageContainer.innerHTML = `<p>Error fetching image for ${state}.</p>`;
+        });
+    }
+
+    const stateDescriptions = {
+        "Johor": "Johor is a state in southern Malaysia linked to Singapore by causeways. Its capital - Johor Bahru, is the second-largest city in Malaysia. Johor is known for its beautiful beaches, including Desaru and the tropical islands of Pulau Rawa and Pulau Sibu.",
+        "Kedah": "Kedah is home to the famous Langkawi, an archipelago of 99 islands with stunning beaches, clear waters, and duty-free shopping.",
+        "Kelantan": "Kelantan offers a rich cultural experience with traditional Malay arts, crafts, and the serene beaches of Tok Bali.",
+        "Malacca": "Malacca is a UNESCO World Heritage site, renowned for its historical landmarks, museums, and vibrant cultural scene.",
+        "Negeri Sembilan": "Negeri Sembilan is famous for its unique Minangkabau architecture and the beautiful Port Dickson beach.",
+        "Pahang": "Pahang is known for its lush rainforests, including Taman Negara, and the cool highlands of Cameron Highlands.",
+        "Penang": "Penang is a food haven, with its capital, George Town, being a UNESCO World Heritage site known for its street art and cuisine.",
+        "Perak": "Perak is home to the historic town of Ipoh, the royal town of Kuala Kangsar, and the famous Pangkor Island.",
+        "Perlis": "Perlis, the smallest state in Malaysia, is known for its serene countryside, limestone hills, and the Wang Kelian State Park.",
+        "Selangor": "Selangor is the most developed state in Malaysia, home to the vibrant city of Shah Alam and the famous Batu Caves.",
+        "Terengganu": "Terengganu is known for its traditional boat-building, beautiful islands like Redang and Perhentian, and rich Malay culture.",
+        "Sabah": "Sabah is home to Mount Kinabalu, the highest peak in Southeast Asia, and is known for its diverse wildlife and marine parks.",
+        "Sarawak": "Sarawak offers a unique blend of indigenous culture, rainforests, and the famous Mulu Caves, a UNESCO World Heritage site.",
+        "WP Kuala Lumpur": "Kuala Lumpur, the capital city of Malaysia, is known for its iconic Petronas Twin Towers, vibrant markets, and bustling nightlife.",
+        "WP Labuan": "Labuan is an offshore financial center and duty-free island known for its wreck diving sites and serene beaches.",
+        "WP Putrajaya": "Putrajaya is the administrative capital of Malaysia, known for its impressive architecture, parks, and man-made lakes."
+    };
+
+    function changeText() {
+        const texts = Object.keys(stateDescriptions);
+        let index = 0;
+        setInterval(() => {
+            changingText.textContent = texts[index];
+            index = (index + 1) % texts.length;
+        }, 3000); // Changes text every 3 seconds
+    }
+
+    stateDropdown.addEventListener('change', function() {
+        const state = stateDropdown.value;
+        fetchImages(state);
+        if (stateDescriptions[state]) {
+            descriptionContainer.innerHTML = `<p>${stateDescriptions[state]}</p>`;
+        } else {
+            descriptionContainer.innerHTML = `<p>No description available for ${state}.</p>`;
+        }
+    });
+
+    changeText(); // Start changing text
+});
+</script>
+
+<!-- Footer Start -->
+<footer id="footer">
+  <h1><span>Travel</span>Lah</h1>
+  <p></p>
+  <div class="social-links">
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fa-brands fa-pinterest-p"></i>
+  </div>
+
+  <div class="credit">
+    <p>Contact Us :<a href="mailto:info@travelLah.com">info@travelLah.com</a></p>
+  </div>
+
+  <div class="copyright">
+    <p>&copy;Copyright 2024 TravelLah. All Rights Reserved</p>
+  </div>
+</footer>
+<!-- Footer End -->
+
+</body>
+</html>
